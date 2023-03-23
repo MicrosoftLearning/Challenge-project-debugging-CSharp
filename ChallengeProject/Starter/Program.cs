@@ -128,28 +128,28 @@ static void MakeChange(int cost, int[] cashTill, int twenties, int tens = 0, int
 
     Console.WriteLine("Cashier prepares the following change:");
 
-    while ((changeNeeded > 19) && (availableTwenties > 0))
+    while ((changeNeeded > 19) && (cashTill[3] > 0))
     {
         cashTill[3]--;
         changeNeeded -= 20;
         Console.WriteLine("\t A twenty");
     }
 
-    while ((changeNeeded > 9) && (availableTens > 0))
+    while ((changeNeeded > 9) && (cashTill[2] > 0))
     {
         cashTill[2]--;
         changeNeeded -= 10;
         Console.WriteLine("\t A ten");
     }
 
-    while ((changeNeeded > 4) && (availableFives > 0))
+    while ((changeNeeded > 4) && (cashTill[1] > 0))
     {
         cashTill[1]--;
         changeNeeded -= 5;
         Console.WriteLine("\t A five");
     }
 
-    while ((changeNeeded > 0) && (availableOnes > 0))
+    while ((changeNeeded > 0) && (cashTill[0] > 0))
     {
         cashTill[0]--;
         changeNeeded -= 1;
